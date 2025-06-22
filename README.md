@@ -75,5 +75,5 @@ python pipeline.py
 ## Output
 - Cleaned dataset saved to:
         cleaned_airbnb_data/
--Format: Parquet (columnar, fast read/write)
+- Format: Parquet (columnar, fast read/write)
 
