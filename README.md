@@ -1,10 +1,10 @@
-# 🏙️ NYC Airbnb Data Cleaning Pipeline
+# NYC Airbnb Data Cleaning Pipeline
 
 This repository contains a PySpark-based data pipeline to clean and process the **New York City Airbnb 2019 dataset**. The pipeline handles missing values, deduplicates data, and saves the output in an efficient Parquet format.
 
 ---
 
-## 📊 Dataset Overview
+## Dataset Overview
 
 - **Dataset Source:** [Inside Airbnb - NYC 2019](http://insideairbnb.com/get-the-data.html)
 - **File:** `AB_NYC_2019.csv`
@@ -13,7 +13,7 @@ This repository contains a PySpark-based data pipeline to clean and process the 
 
 ---
 
-## 🧾 Key Columns
+## Key Columns
 
 | Column Name                     | Description |
 |--------------------------------|-------------|
@@ -34,11 +34,11 @@ This repository contains a PySpark-based data pipeline to clean and process the 
 
 ---
 
-## 🧹 Cleaning & Feature Engineering Steps
+##  Cleaning & Feature Engineering Steps
 
-✔️ Drop duplicate rows  
-✔️ Drop records missing key fields: `id`, `name`, `latitude`, `longitude`  
-✔️ Fill missing values:
+Drop duplicate rows  
+Drop records missing key fields: `id`, `name`, `latitude`, `longitude`  
+Fill missing values:
 - `host_name` and `neighbourhood_group`: `"Unknown"`
 - `last_review`: `"N/A"`
 - `reviews_per_month`, `number_of_reviews`, `availability_365`, `calculated_host_listings_count`: `0`
@@ -46,7 +46,7 @@ This repository contains a PySpark-based data pipeline to clean and process the 
 
 ---
 
-## 🛠 Technologies Used
+## Technologies Used
 
 - [PySpark](https://spark.apache.org/docs/latest/api/python/)
 - pandas
@@ -55,10 +55,25 @@ This repository contains a PySpark-based data pipeline to clean and process the 
 
 ---
 
-## 🧪 How to Run
+## How to Run
 
-### 🔧 Local Setup
+### Local Setup
 
 1. **Install dependencies**
 ```bash
 pip install -r requirements.txt
+```
+
+2. Download the dataset
+Place AB_NYC_2019.csv in the root directory.
+
+3. Run the pipeline
+ ```bash
+python pipeline.py
+```
+
+## Output
+- Cleaned dataset saved to:
+        cleaned_airbnb_data/
+-Format: Parquet (columnar, fast read/write)
+
